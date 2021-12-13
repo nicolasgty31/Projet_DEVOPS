@@ -69,3 +69,30 @@ kubectl get all
 -Cette commande permet d'afficher le nom 
 kubectl get pods
 kubectl cp (le nom du conteneur):/app -c httpd-php-container
+
+4) Base de données
+
+-Utilisez le fichier secret qui se trouve dans sur le git et ouvrez le.
+nano mysql-secret.yaml
+
+-Le mot de passe du fichier "mysql-secret.yaml" est: password
+
+-Enregistrez le fichier et quittez. Utilisez kubectl.
+kubectl apply -f mysql-secret.yaml
+
+-Utilisez le fichier de déploiement qui se trouve dans sur le git et ouvrez le. Le fichier de déploiement définit les ressources que le déploiement MySQL utilisera.
+nano mysql-deployment.yaml
+
+-Enregistrez le fichier et quittez. Créez le déploiement en appliquant le fichier avec kubectl.
+kubectl apply -f mysql-deployment.yaml
+
+-Pour accéder à l'instance MySQL, accédez au pod créé par le déploiement.
+kubectl get pod
+
+-Ouvrez un shell pour le pod en exécutant la commande suivante :
+kubectl exec --stdin --tty mysql-694d95668d-w7lv5 -- /bin/bash
+
+-Tapez la commande suivante pour accéder au shell MySQL.
+mysql -p
+
+-Lorsque vous y êtes invité, entrez le mot de passe que vous avez défini dans le secret Kubernetes qui est: password
