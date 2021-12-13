@@ -107,7 +107,7 @@ metadata:
   name: mysql-service
 spec:
   selector:
-    app: lamp-wp
+    app: mysql-deployment
   ports:
     - protocol: TCP
       port: 3306
