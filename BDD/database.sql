@@ -17,16 +17,6 @@
 CREATE DATABASE IF NOT EXISTS `devops` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `devops`;
 
--- Listage de la structure de la table devops. projets
-CREATE TABLE IF NOT EXISTS `projets` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL DEFAULT '0',
-  `description` varchar(500) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Les données exportées n'étaient pas sélectionnées.
-
 -- Listage de la structure de la table devops. users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,7 +25,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Les données exportées n'étaient pas sélectionnées.
+-- Listage des données de la table devops.users : ~0 rows (environ)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `nom`, `prenom`) VALUES
+	(1, 'Accossano', 'Georges'),
+	(2, 'Levesque', 'Michael'),
+	(3, 'Guitay', 'Nicolas');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
