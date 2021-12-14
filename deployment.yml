@@ -29,3 +29,15 @@ spec:
       volumes:
         - name: mysql-data
           emptyDir: {}
+
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+    name: mysql-service
+subsets:
+    - addresses:
+        - ip: 192.168.77.1
+      ports:
+        - name: mysql
+          port: 3306

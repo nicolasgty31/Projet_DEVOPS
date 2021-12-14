@@ -1,13 +1,13 @@
 
 <?php
-$user = root;
+$user = root@loclahost;
 $pass = password;
 
-$bdd = new PDO('mysql:host=10.103.174.63:3306;dbname=database', $user, $pass);
+$bdd = new PDO('mysql:host=10.103.174.63:3306;dbname=devops', $user, $pass);
 
-$projects = $bdd->query('SELECT * FROM projet');
+$projects = $bdd->query('SELECT * FROM projets');
 
-$users = $bdd->query('SELECT * FROM user');
+$users = $bdd->query('SELECT * FROM users');
 
 $project = $projects->fetch()
 
